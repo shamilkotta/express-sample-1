@@ -1,7 +1,7 @@
 const experss = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
-const { engine } = require('express-handlebars')
+const { engine } = require("express-handlebars");
 
 const indexRouter = require("./routes");
 const errorHandler = require("./middleware/errorHandling");
@@ -11,7 +11,14 @@ const app = experss();
 // Setting view engine
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
-app.engine('hbs', engine({ extname: "hbs", defaultLayout: "index", layoutsDir: `${__dirname}/views/` }))
+app.engine(
+  "hbs",
+  engine({
+    extname: "hbs",
+    defaultLayout: "index",
+    layoutsDir: `${__dirname}/views/`,
+  })
+);
 
 // Parsers
 app.use(experss.json()); // for parsing application/json
