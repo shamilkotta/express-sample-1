@@ -1,0 +1,20 @@
+<section class="container-fluid p-5">
+  <h1>Title goes here.</h1>
+  <hr>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    {{#each books}}
+    <div class="col">
+      <div class="card">
+        <img src="{{this.thumbnailUrl}}" class="card-img-top" alt="{{this.title}}" />
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">{{this.shortDescription}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">{{this.publishedDate.$date}}</small>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>
