@@ -1,5 +1,6 @@
 const express = require("express");
 const books = require("../utils/books.json");
+const gallery = require("../utils/gallery.json");
 
 const router = express.Router();
 
@@ -15,6 +16,10 @@ router.get("/table", (req, res) => {
       indexNum: (val) => val + 1,
     },
   });
+});
+
+router.get("/gallery", (req, res) => {
+  res.render("gallery", { layout: "index", gallery });
 });
 
 module.exports = router;
