@@ -1,0 +1,15 @@
+<section class="container-fluid px-3 px-md-4 py-5">
+  <h1>Gallery.</h1>
+  <hr />
+  <div class="card-parent">
+    {{#each gallery}}
+      <div class="card-child w-100">
+        <img
+          src="{{this.url}}"
+          class="w-100 shadow-1-strong rounded mb-3"
+          alt="{{this.alt}}"
+        />
+      </div>
+    {{/each}}
+  </div>
+</section>
