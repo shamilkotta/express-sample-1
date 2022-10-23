@@ -13,7 +13,7 @@ app.set("view engine", "hbs");
 
 // Parsers
 app.use(experss.json()); // for parsing application/json
-app.use(experss.urlencoded()); // for parsing application/x-www-form-urlencoded
+app.use(experss.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookieParser()); // coockie parser
 
 // serve form public folder as /static path
