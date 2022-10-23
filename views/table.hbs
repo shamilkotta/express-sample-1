@@ -1,0 +1,31 @@
+<section class="container-fluid px-3 px-md-5 py-5">
+  <h1>Books.</h1>
+  <hr />
+  <div class="table-responsive-lg">
+
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Page Count</th>
+          <th scope="col">Authors</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each books}}
+          <tr>
+            <th scope="row">{{indexNum @index}}</th>
+            <td>{{this.title}}</td>
+            <td>{{this.pageCount}}</td>
+            <td>{{#each this.authors}}
+                <span>{{this}}<b>,</b> </span>
+              {{/each}}</td>
+            <td>{{this.status}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</section>
