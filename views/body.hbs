@@ -1,10 +1,10 @@
 <section class="container-fluid p-5">
-  <h1>Title goes here.</h1>
+  <h1>Books.</h1>
   <hr />
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+  <div class="card-parent">
     {{#each books}}
-      <div class="col">
-        <div class="card">
+      <div class="col card-child">
+        <div class="card my-2">
           <img
             src="{{this.thumbnailUrl}}"
             class="card-img-top"
@@ -13,6 +13,15 @@
           <div class="card-body">
             <h5 class="card-title">{{this.title}}</h5>
             <p class="card-text">{{this.shortDescription}}</p>
+            <span class="card-text fw-bold">Authors: </span>
+            {{#each this.authors}}<span>{{this}}, </span>{{/each}}
+            <div class="tags mt-2">
+              {{#each this.categories}}
+                <span
+                  class="bg-secondary px-2 py-1 rounded-2 text-white"
+                >{{this}}</span>
+              {{/each}}
+            </div>
           </div>
           <div class="card-footer">
             <small class="text-muted">{{this.publishedDate.$date}}</small>
